@@ -13,6 +13,7 @@ import org.bukkit.scheduler.BukkitTask;
 /**
  * This class is for accessing and modifying the file holding all player homes
  */
+
 public class HomeFile {
     SimplerHomes instance = SimplerHomes.getInstance();
     File homesFile = new File("plugins/SimplerHomes", "homes.yml");
