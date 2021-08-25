@@ -6,6 +6,7 @@ import java.util.function.Consumer;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.Sound;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
@@ -46,6 +47,8 @@ public class HomeFile {
         homes.set(configPath + ".Z",loc.getZ());
         homes.set(configPath + ".Yaw",loc.getYaw());
         homes.set(configPath + ".Pitch",loc.getPitch());
+        pl.sendMessage("Home '" + homeName + "' was sucessfully created.");
+        pl.playSound(pl.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, (float) 0.5, (float) 1.5);
         saveFile(homesFile);
     }
     /**
@@ -87,6 +90,7 @@ public class HomeFile {
                         task.cancel();
                     } else {
                         pl.sendMessage("You will be teleported in " + i);
+                        pl.playSound(pl.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, (float) 0.5, 1);
                         i--;
                     }
                 }
@@ -107,6 +111,7 @@ public class HomeFile {
             if(homes.contains(configPath)){
                 homes.set(configPath, null);
                 saveFile(homesFile);
+                pl.playSound(pl.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, (float) 0.5, (float) 0.5);
                 pl.sendMessage("Home '" + homeName + "' was successfully deleted!");
             } else {
                 pl.sendMessage("Home '" + homeName + "' couldn't be found.");
