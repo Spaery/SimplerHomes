@@ -1,0 +1,45 @@
+main: io.github.spaery.simplerhomes.SimplerHomes
+name: SimplerHomes
+author: Spaery
+version: 1.0
+api-version: 1.17
+
+commands:
+  home:
+    description: Teleport to the requested home location
+    usage: /home (NameOfHome)
+    permission: simplerhomes.home
+  homes:
+    description: View a list of set homes
+    usage: /homes
+    permission: simplerhomes.homes
+  sethome:
+    description: Create a home to return to when extecuting "/home" command
+    usage: /sethome (NameOfHome)
+    permission: simplerhomes.sethome
+  delhome:
+    description: Delete the specified home
+    usage: /delhome (NameOfHome)
+    permission: simplerhomes.delhome
+
+permissions:
+  simplerhomes.*:
+    description: Gives access to all simperhomes commands
+    default: true
+    children:
+      simplerhomes.homes: true
+      simplerhomes.home: true
+      simplerhomes.sethome: true
+      simplerhomes.delhome: true
+  simplerhomes.homes:
+    description: Allows you to list your homes
+    default: true
+  simplerhomes.home:
+    description: Allows you to teleport to your homes
+    default: true
+  simplerhomes.sethome:
+    description: Allows you to create homes
+    default: true
+  simplerhomes.delhome:
+    description: Allows you to delete your homes
+    default: true
