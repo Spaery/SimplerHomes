@@ -19,6 +19,8 @@ public class Sethome implements CommandExecutor {
                 player.sendMessage("Please specify name of home as such: '/sethome (NameOfHome)'");
             } catch (IllegalStateException e){
                 player.sendMessage("You have reached the maximum number of homes.");
+            } catch (ArithmeticException e){
+                player.sendMessage("Home already exists");
             }
         } else {
             sender.sendMessage("Command must be executed by a player.");
