@@ -25,5 +25,4 @@ public class Sethome implements CommandExecutor {
         }
         return true;
     }
-    
 }

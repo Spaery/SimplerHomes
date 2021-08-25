@@ -18,5 +18,4 @@ public class Homes implements CommandExecutor {
         }
         return true;
     }
-    
 }
