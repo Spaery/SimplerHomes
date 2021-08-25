@@ -10,15 +10,17 @@ public class Home implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if(sender instanceof Player){
+            if(args.length > 1) return false;
             Player player = (Player) sender;
             HomeFile h = new HomeFile();
-            if(args.length > 1) return false;
             try {
                 h.home(player, args[0]);
             } catch (ArrayIndexOutOfBoundsException e) {
                 player.sendMessage("Please specify home as such: '/home (NameOfHome)'");
             }            
-        } else return false;
+        } else {
+            sender.sendMessage("Command must be executed by a player.");
+        }
         return true;
     }
     

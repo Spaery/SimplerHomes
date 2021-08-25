@@ -13,7 +13,9 @@ public class Homes implements CommandExecutor {
             Player player = (Player) sender;
             HomeFile h = new HomeFile();
             h.homes(player);
-        } else return false;
+        } else {
+            sender.sendMessage("Command must be executed by a player.");
+        }
         return true;
     }
     
