@@ -9,18 +9,18 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
- * Hello world!
- *
+ * Main classe file for this plugin
+ * 
  */
 public class SimplerHomes extends JavaPlugin
 {
     private File homes;
     private FileConfiguration homesConfig;
-    private static SimplerHomes instance;
+    private static SimplerHomes plugin;
 
     @Override
     public void onEnable(){
-        instance = this;
+        plugin = this;
         getLogger().info("For all your home setting needs!");
         FileConfiguration config = this.getConfig();
         config.addDefault("NumberOfHomes", 5);
@@ -32,20 +32,28 @@ public class SimplerHomes extends JavaPlugin
         this.getCommand("homes").setExecutor(new Homes());
         this.getCommand("delhome").setExecutor(new Delhome());
         createhomes();
-        
     }
+
     @Override
     public void onDisable(){
     }
-
+    /**
+     * Getter for the plugin instance
+     * @return returns the SimplerHomes object for accessing configs
+     */
     public static SimplerHomes getInstance(){
-        return instance;
+        return plugin;
     }
-
+    /**
+     * Getter for homes.yml
+     * @return returns the file object for homes.yml
+     */
     public FileConfiguration getHomesConfig(){
         return homesConfig;
     }
-
+    /**
+     * Creates homes.yml
+     */
     private void createhomes(){
         homes = new File(getDataFolder(),"homes.yml");
         if(!homes.exists()){
@@ -59,6 +67,4 @@ public class SimplerHomes extends JavaPlugin
             e.printStackTrace();
         }
     }
-
-    
 }
