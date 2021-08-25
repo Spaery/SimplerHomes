@@ -17,7 +17,7 @@ public class Delhome implements CommandExecutor {
             } catch (ArrayIndexOutOfBoundsException e) {
                 player.sendMessage("Please specify home to delete as such: '/delhome (NameOfHome)'");
             }
-        }
+        } else return false;
         return true;
     }
     

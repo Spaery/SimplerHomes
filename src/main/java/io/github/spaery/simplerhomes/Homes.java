@@ -13,7 +13,7 @@ public class Homes implements CommandExecutor {
             Player player = (Player) sender;
             HomeFile h = new HomeFile();
             h.homes(player);
-        }
+        } else return false;
         return true;
     }
     

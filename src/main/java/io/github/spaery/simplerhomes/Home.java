@@ -12,12 +12,13 @@ public class Home implements CommandExecutor {
         if(sender instanceof Player){
             Player player = (Player) sender;
             HomeFile h = new HomeFile();
+            if(args.length > 1) return false;
             try {
                 h.home(player, args[0]);
             } catch (ArrayIndexOutOfBoundsException e) {
                 player.sendMessage("Please specify home as such: '/home (NameOfHome)'");
             }            
-        }
+        } else return false;
         return true;
     }
     

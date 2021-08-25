@@ -12,6 +12,7 @@ public class Sethome implements CommandExecutor {
         if(sender instanceof Player){
             Player player = (Player) sender;
             HomeFile h = new HomeFile();
+            if(args.length > 1) return false;
             try {
                 h.setHome(player, args[0]);
             } catch (ArrayIndexOutOfBoundsException e) {
@@ -19,7 +20,7 @@ public class Sethome implements CommandExecutor {
             } catch (IllegalStateException e){
                 player.sendMessage("You have reached the maximum number of homes.");
             }
-        }
+        } else return false;
         return true;
     }
     

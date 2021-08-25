@@ -28,6 +28,8 @@ public class HomeFile {
         Location loc = pl.getLocation();
         String configPath = pl.getDisplayName() + "." + homeName;
         int i = 0;
+        // Checks to ensure home limit is not reached.
+        // home limit is set the the config.yml
         if (homes.getConfigurationSection(pl.getDisplayName()) != null){
             for (String key : homes.getConfigurationSection(pl.getDisplayName()).getKeys(false)){
                 i++;
@@ -71,9 +73,9 @@ public class HomeFile {
         try {
             Location loc = new Location(
                 Bukkit.getWorld(homes.getString(configPath + ".World")),
-                (double) homes.getDouble(configPath + ".X"), 
-                (double) homes.getDouble(configPath + ".Y"), 
-                (double) homes.getDouble(configPath + ".Z"),
+                homes.getDouble(configPath + ".X"), 
+                homes.getDouble(configPath + ".Y"), 
+                homes.getDouble(configPath + ".Z"),
                 (float) homes.getDouble(configPath + ".Yaw"),
                 (float) homes.getDouble(configPath + ".Pitch"));
             Bukkit.getScheduler().runTaskTimer(instance, new Consumer<BukkitTask>(){
