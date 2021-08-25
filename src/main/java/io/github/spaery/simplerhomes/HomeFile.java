@@ -34,6 +34,9 @@ public class HomeFile {
         if (homes.getConfigurationSection(pl.getDisplayName()) != null){
             for (String key : homes.getConfigurationSection(pl.getDisplayName()).getKeys(false)){
                 i++;
+                if(key.equals(homeName)){
+                    throw new ArithmeticException();
+                }
                 if(i >= instance.getConfig().getInt("NumberOfHomes")){
                     throw new IllegalStateException();
                 } else {
