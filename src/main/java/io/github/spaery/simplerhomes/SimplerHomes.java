@@ -9,7 +9,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
- * Main classe file for this plugin
+ * Main class file for this plugin
  * 
  */
 public class SimplerHomes extends JavaPlugin
