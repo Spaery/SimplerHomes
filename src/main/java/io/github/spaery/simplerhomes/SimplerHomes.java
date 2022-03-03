@@ -31,6 +31,8 @@ public class SimplerHomes extends JavaPlugin
         this.getCommand("home").setExecutor(new Home());
         this.getCommand("homes").setExecutor(new Homes());
         this.getCommand("delhome").setExecutor(new Delhome());
+        this.getCommand("gethome").setExecutor(new GetHomes());
+        // Does all the home file shenanigans
         createhomes();
     }
 
