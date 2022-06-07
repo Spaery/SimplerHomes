@@ -2,7 +2,7 @@ main: io.github.spaery.simplerhomes.SimplerHomes
 name: SimplerHomes
 author: Spaery
 version: 1.1.1
-api-version: 1.17
+api-version: 1.19
 
 commands:
   home:
@@ -14,7 +14,7 @@ commands:
     usage: /homes
     permission: simplerhomes.homes
   sethome:
-    description: Create a home to return to when extecuting "/home" command
+    description: Create a home to return to when executing "/home" command
     usage: /sethome (NameOfHome)
     permission: simplerhomes.sethome
   delhome:
@@ -24,7 +24,7 @@ commands:
 
 permissions:
   simplerhomes.*:
-    description: Gives access to all simperhomes commands
+    description: Gives access to all simplerhomes commands
     default: true
     children:
       simplerhomes.homes: true
